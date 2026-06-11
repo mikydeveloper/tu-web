@@ -1,59 +1,41 @@
-# TuWebApp
+# ⚡ Tu Web - Plataforma de Cotización y Agendamiento (BaaS)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Este repositorio contiene el código fuente del Frontend de **Tu Web** (proyecto Aliado Web), una plataforma interactiva diseñada para que dueños de pequeñas y medianas empresas (Mypes) puedan cotizar servicios de desarrollo web y agendar asesorías de forma automatizada.
 
-## Development server
+El proyecto implementa una arquitectura **BaaS (Backend as a Service)** utilizando **Supabase** como capa de datos, separando la lógica de negocio en módulos independientes y altamente escalables.
 
-To start a local development server, run:
+## 🚀 Tecnologías Utilizadas
 
+* **Framework:** Angular 21 (Standalone Components, Signals, Control Flow `@if`, `@for`).
+* **Estilos:** Tailwind CSS (Diseño responsivo, modo oscuro nativo, animaciones custom).
+* **Animaciones:** `ng-particles` / `tsparticles-slim` (Fondo de red neuronal interactiva).
+* **BaaS (Base de Datos):** Supabase (PostgreSQL) con integración directa vía `@supabase/supabase-js`.
+* **Control de Versiones:** Git & GitHub.
+
+## 🏗️ Arquitectura y Módulos Principales
+
+El proyecto sigue los principios SOLID y separa responsabilidades en las siguientes características (features):
+
+1.  **Módulo de Cotización (`/cotizador`):**
+    * Formulario reactivo con cálculo de precios en tiempo real.
+    * Consulta de catálogo dinámico de servicios desde Supabase.
+    * Transacción multi-tabla: Guarda el prospecto, genera la cabecera de la cotización y el detalle de la misma.
+2.  **Módulo de Agendamiento (`/agendar`):**
+    * Comportamiento adaptativo: Detecta si el usuario proviene del cotizador (recibe ID por URL) o si es tráfico directo desde el Navbar.
+    * Simulación de integración con Google Meet para salas de videollamada.
+3.  **Capa DAO (`core/services/supabase.ts`):**
+    * Servicio inyectable que centraliza y encapsula todas las peticiones asíncronas a PostgreSQL.
+
+## 🛠️ Requisitos Previos
+
+Asegúrate de tener instalado en tu entorno local:
+* [Node.js](https://nodejs.org/) (v18 o superior).
+* [Angular CLI](https://angular.dev/tools/cli) (`npm install -g @angular/cli`).
+* Una cuenta en [Supabase](https://supabase.com/) con un proyecto creado.
+
+## ⚙️ Instalación y Configuración Local
+
+**1. Clonar el repositorio:**
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+git clone [https://github.com/mikydeveloper/tu-web.git](https://github.com/mikydeveloper/tu-web.git)
+cd tu-web
