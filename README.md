@@ -1,4 +1,4 @@
-# ⚡ Tu Web - Plataforma de Cotización y Agendamiento (BaaS)
+# ⚡ Tu Web - Plataforma de Cotización y Agendamiento 
 
 Este repositorio contiene el código fuente del Frontend de **Tu Web** (proyecto Aliado Web), una plataforma interactiva diseñada para que dueños de pequeñas y medianas empresas (Mypes) puedan cotizar servicios de desarrollo web y agendar asesorías de forma automatizada.
 
